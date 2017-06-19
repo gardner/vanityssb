@@ -11,6 +11,14 @@ var ticks = 0
 var totalkps = 0;
 var avgkps = 0
 
+if (fs.existsSync('./done.txt')) {
+  console.log("---------\n\nWARNING: done.txt exists")
+  console.log("\n---------\n\nThere are already results in this directory\n\n")
+  console.log("to destroy previous results and start over please run: rm done.txt key*\n")
+  process.exit()
+}
+
+
 var outputProgress = function() {
   var now = new Date();
   var sec = ((now.getTime() - start.getTime()) / 1000)
@@ -43,6 +51,7 @@ if (cluster.isMaster) {
 
   cluster.on('exit', (worker, code, signal) => {
     console.log(`worker ${worker.process.pid} died`);
+    process.exit()
   });
   setInterval(outputProgress, 3000);
 } else {
