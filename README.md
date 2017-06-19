@@ -1,7 +1,9 @@
 # vanityssb
 Crude discovery of vanity public keys that start with the specified text (case-insensitive). Four character vanity keys are easy to discover in less than a minute. Every additional character adds an exponential level of complexity.
 
-##### Important:
+![system load while running](https://github.com/gardner/vanityssb/raw/master/htop.png)
+
+### Important:
 After a key is found the result files must be deleted before another key search: `rm done.txt key*`
 
 Usage: `node ./index.js <string>`
@@ -23,4 +25,4 @@ Running on an Intel i7-4870HQ CPU @ 2.50GHz
     Finding vanity public key for gardner
     tick[135]: avg[72055] ~ kps[69089] = secs[405] / tested[28010k]
 
-All tests were conducted with node v6
+Tests were conducted with node v6
