@@ -1,0 +1,14 @@
+{
+  "name": "vanity-keys",
+  "description": "generate vanity keys for ssb",
+  "version": "0.1.0",
+  "dependencies": {
+    "chloride": "^2.2.7",
+    "ssb-keys": "^7.0.9"
+  },
+  "scripts": {
+    "test": "tape test/"
+  },
+  "author": "Gardner Bickford <gbickford@gmail.com>",
+  "license": "MIT"
+}
