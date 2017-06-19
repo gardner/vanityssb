@@ -11,18 +11,16 @@ If no string is specified then $USER is used. The time to find a key grows expon
 
 This design was the easiest to implement. No regard for optimization has been considered. Using the same npm lib as the system, we are guaranteed compatibility. After preliminary research into generating ed25519 by other means it was determined that verifying compatibility would be as complex as implementing this design. (X2)
 
-Running on C2L (8 core x86) instance provided by Scaleway:
+Scaleway Paris C2M
 
-    root@scw-0ad696:~/test# node ./index.js gardner
-    Master 4966 is running
-    Finding vanity public key for gardner
-    tick[127]: avg[47439] ~ kps[47828] = secs[381] / tested[18230k]
+    tick[55]: avg[46981] ~ kps[47484] = secs[165] / tested[7840k]
 
 Running on an Intel i7-4870HQ CPU @ 2.50GHz
 
-    $ node ./index.js gardner
-    Master 10645 is running
-    Finding vanity public key for gardner
     tick[135]: avg[72055] ~ kps[69089] = secs[405] / tested[28010k]
+
+Vultr Dallas Debian
+
+    tick[2]tick[49]: avg[187844] ~ kps[189903] = secs[147] / tested[27970k]
 
 Tests were conducted with node v6
