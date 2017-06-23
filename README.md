@@ -21,6 +21,6 @@ Running on an Intel i7-4870HQ CPU @ 2.50GHz
 
 Vultr Dallas Debian
 
-    tick[2]tick[49]: avg[187844] ~ kps[189903] = secs[147] / tested[27970k]
+    tick[49]: avg[187844] ~ kps[189903] = secs[147] / tested[27970k]
 
 Tests were conducted with node v6
