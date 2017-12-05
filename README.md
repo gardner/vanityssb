@@ -4,10 +4,10 @@ Crude discovery of vanity public keys that start with the specified text (case-i
 ![system load while running](https://github.com/gardner/vanityssb/raw/master/htop.png)
 
 ### Important:
-After a key is found the result files must be deleted before another key search: `rm done.txt key*`
+After a key is found the result files must be deleted before another key search: `rm -f done.txt key*`
 
-Usage: `node ./index.js <string>`
-If no string is specified then $USER is used. The time to find a key grows exponentially with every character added to length of string. The program exits almost immediately when passed a single character. Within seconds when run accidentally as 'root' and does not finish after multiple hours when run with a 7 character string 'gardner'.
+Usage: `vanityssb <string>`
+If no string is specified then $USER is used. The time to find a key grows exponentially with every character added to length of string. The program exits almost immediately when passed a single character. Within seconds when run as 'root' and takes multiple days when run with a 7 character string 'gardner'.
 
 This design was the easiest to implement. No regard for optimization has been considered. Using the same npm lib as the system, we are guaranteed compatibility. After preliminary research into generating ed25519 by other means it was determined that verifying compatibility would be as complex as implementing this design. (X2)
 
