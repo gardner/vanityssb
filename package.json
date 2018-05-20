@@ -1,16 +1,14 @@
 {
   "name": "vanityssb",
   "description": "generate vanity keys for ssb",
-  "version": "1.0.6",
+  "version": "1.0.5",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/gardner/vanityssb"
   },
   "bin": {
     "vanityssb": "./index.js"
-  },
-  "scripts": {
-    "start": "node ./index.js"
   },
   "dependencies": {
     "chloride": "^2.2.9",
