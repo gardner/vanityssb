@@ -20,6 +20,34 @@ if (fs.existsSync('./done.txt')) {
   process.exit()
 }
 
+function shortenLargeNumber(num, digits) {
+  digits = (digits) ? digits : 0
+
+  var units = ['k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'],
+    decimal;
+
+  for(var i=units.length-1; i>=0; i--) {
+    decimal = Math.pow(1000, i+1);
+
+    if(num <= -decimal || num >= decimal) {
+      return +(num / decimal).toFixed(digits) + units[i];
+    }
+  }
+
+  return num;
+}
+
+function parseSecs(secs) {
+  var seconds = parseInt(secs, 10);
+  var days = Math.floor(seconds / (3600*24));
+  seconds  -= days*3600*24;
+  var hrs   = Math.floor(seconds / 3600);
+  seconds  -= hrs*3600;
+  var mnts = Math.floor(seconds / 60);
+  seconds  -= mnts*60;
+  return days+"d, "+hrs+"h, "+mnts+"m, "+seconds+"s";
+}
+
 var outputProgress = function () {
   var now = new Date()
   var sec = ((now.getTime() - start.getTime()) / 1000)
@@ -34,7 +62,7 @@ var outputProgress = function () {
   // average kps since beginning of time
   process.stdout.clearLine()
   readline.cursorTo(process.stdout, 0)
-  process.stdout.write('tick[' + ticks + ']: avg[' + Math.round(totalkps / (ticks - 1)) + '] ~ kps[' + Math.round(kps) + '] = secs[' + Math.round(sec) + '] / tested[' + tested / 1000 + 'k]')
+  process.stdout.write('tick[' + shortenLargeNumber(ticks, 1) + ']: avg[' + Math.round(totalkps / (ticks - 1)) + '] ~ kps[' + Math.round(kps) + "] - runtime[" + parseSecs(sec) + '] / tested[' + shortenLargeNumber(tested,2) + ']')
 }
 
 if (cluster.isMaster) {

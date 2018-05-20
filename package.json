@@ -9,6 +9,9 @@
   "bin": {
     "vanityssb": "./index.js"
   },
+  "scripts": {
+    "start": "node ./index.js"
+  },
   "dependencies": {
     "chloride": "^2.2.7",
     "ssb-keys": "^7.0.9"
