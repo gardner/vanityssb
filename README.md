@@ -1,6 +1,10 @@
 # vanityssb
 Crude discovery of vanity public keys that start with the specified text (case-insensitive). Four character vanity keys are easy to discover in less than a minute. Every additional character adds an exponential level of complexity.
 
+## Usage
+
+    npx vanityssb [string]
+
 ![system load while running](https://github.com/gardner/vanityssb/raw/master/htop.png)
 
 ### Important:
