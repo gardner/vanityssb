@@ -1,7 +1,7 @@
 {
   "name": "vanityssb",
   "description": "generate vanity keys for ssb",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,8 +11,8 @@
     "vanityssb": "./index.js"
   },
   "dependencies": {
-    "chloride": "^2.2.9",
-    "ssb-keys": "^7.0.16"
+    "chloride": "^2.4.1",
+    "ssb-keys": "^8.2.0"
   },
   "author": "Gardner Bickford <gbickford@gmail.com>",
   "license": "MIT"
